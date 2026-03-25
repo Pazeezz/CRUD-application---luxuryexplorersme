@@ -177,7 +177,19 @@ Instead of using blanket permissions, you must create a specific IAM Policy limi
   ]
 }
 ```
-Attach this policy to an **IAM Role** attached to the EC2 instance (IAM Instance Profile). This avoids hardcoded credentials in `.env`, but if you prefer separate keys, create an IAM User with this policy and generate Access Keys to pass to the `.env` file via `AWS_ACCESS_KEY_ID`.
+Attach this policy to an **IAM Role** attached to the EC2 instance (IAM Instance Profile). This effortlessly fulfills the "No Hardcoded Secrets" requirement.
+
+**If you already launched your EC2 instance without a role:**
+1. Navigate to **EC2** in the AWS Console.
+2. Right-click your instance -> **Security** -> **Modify IAM Role**.
+3. Select your S3 Access IAM Role and click **Update IAM role**.
+
+Then, inside your `.env` file on the server, you **must leave the keys entirely blank**:
+```bash
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+```
+Boto3 will automatically route through the secure EC2 Instance metadata to authenticate uploads dynamically!
 
 ### 5. Deployment Steps
 

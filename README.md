@@ -1,6 +1,10 @@
-# Production-Ready CRUD Application (Django + React + PostgreSQL)
+# Associate Cloud Engineer Technical Examination
 
-This repository contains a minimal full-stack CRUD app for validating infrastructure, security, containerization, and deployment readiness.
+**Developed by:** Pasindu Jayawardhane - DevOps Engineer
+
+## Project Overview
+
+This repository contains a minimal full-stack CRUD app to demonstrate infrastructure, security, containerization, and deployment readiness on AWS Free Tier.
 
 ## Stack
 

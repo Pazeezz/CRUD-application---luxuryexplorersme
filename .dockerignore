@@ -1,0 +1,16 @@
+.git
+.gitignore
+.DS_Store
+README.md
+LICENSE
+.env
+.env.*
+!.env.example
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/*.pyc
+**/node_modules
+**/dist
+**/build
+

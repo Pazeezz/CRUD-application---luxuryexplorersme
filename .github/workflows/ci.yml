@@ -121,8 +121,8 @@ jobs:
       - name: Deploy securely via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USERNAME }}
+          host: 'ec2-13-62-128-51.eu-north-1.compute.amazonaws.com'
+          username: 'ubuntu'
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ~/project

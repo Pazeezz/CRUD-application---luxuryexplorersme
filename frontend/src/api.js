@@ -17,14 +17,14 @@ export async function listNotes() {
 
 export async function createNote(payload) {
   const isFormData = payload instanceof FormData;
-  const config = isFormData ? { headers: { "Content-Type": "multipart/form-data" } } : {};
+  const config = isFormData ? { headers: { "Content-Type": undefined } } : {};
   const { data } = await api.post("/notes/", payload, config);
   return data;
 }
 
 export async function updateNote(id, payload) {
   const isFormData = payload instanceof FormData;
-  const config = isFormData ? { headers: { "Content-Type": "multipart/form-data" } } : {};
+  const config = isFormData ? { headers: { "Content-Type": undefined } } : {};
   const { data } = await api.patch(`/notes/${id}/`, payload, config);
   return data;
 }

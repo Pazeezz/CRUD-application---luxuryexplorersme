@@ -40,3 +40,21 @@ class NoteApiTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Note.objects.count(), 0)
 
+    def test_upload_file(self):
+        """Test uploading a file via multipart form-data"""
+        import io
+        from django.core.files.uploadedfile import SimpleUploadedFile
+        file = SimpleUploadedFile("test.pdf", b"file_content", content_type="application/pdf")
+        response = self.client.post(
+            reverse("note-list"),
+            {
+                "title": "Upload test",
+                "description": "Upload test description",
+                "file": file
+            },
+            format="multipart"
+        )
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Note.objects.count(), 1)
+        self.assertIn("test", Note.objects.first().file.name)
+

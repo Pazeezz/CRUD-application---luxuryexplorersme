@@ -165,7 +165,13 @@ export default function App() {
             <p>{note.description || "No description."}</p>
             {note.file ? (
               <p>
-                <a href={note.file} target="_blank" rel="noopener noreferrer">
+                <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(note.file, 'popup', 'width=800,height=600,scrollbars=yes,resizable=yes');
+                  }}
+                >
                   View Attachment
                 </a>
               </p>
@@ -188,7 +194,8 @@ export default function App() {
       </section>
 
       <footer style={{ marginTop: "2rem", textAlign: "center", color: "#666" }}>
-        <p>develop by Pasindu Jayawardhane - DevOps Engineer</p>
+        <p>Associate Cloud Engineer Technical Assienmet by Luxury Events And Vip Travel FZCO.</p>
+        <p>Developed by Pasindu Jayawardhane - DevOps Engineer</p>
       </footer>
     </main>
   );

@@ -54,10 +54,10 @@ docker compose up --build
 
 3. Open:
 
-- Application (via Nginx): `http://localhost:8080`
-- API root (via Nginx): `http://localhost:8080/api/`
-- Admin (via Nginx): `http://localhost:8080/admin/`
-- Nginx health: `http://localhost:8080/nginx-health`
+- Application (via Nginx): `http://localhost`
+- API root (via Nginx): `http://localhost/api/`
+- Admin (via Nginx): `http://localhost/admin/`
+- Nginx health: `http://localhost/nginx-health`
 
 4. Stop:
 

@@ -75,7 +75,7 @@ services:
       timeout: 5s
       retries: 5
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - media_volume:/usr/share/nginx/media
     networks:
